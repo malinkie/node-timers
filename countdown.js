@@ -10,8 +10,8 @@ module.exports = function(options) {
   var timer = simple(options),
       originalTimeFunc = timer.time;
 
-  timer.time = function(){
-    var timeLeft = options.startTime - originalTimeFunc.call(timer);
+  timer.time = function(newTime){
+    var timeLeft = options.startTime - originalTimeFunc.call(timer, newTime);
     if (timeLeft <= 0) timeLeft = 0;
     return timeLeft;
   };

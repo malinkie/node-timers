@@ -11,8 +11,8 @@ module.exports = function (options) {
   var timer = simple(options),
       originalTimeFunc = timer.time;
   
-  timer.time = function(){
-    var elapsedTime = originalTimeFunc.call(timer);
+  timer.time = function(newTime){
+    var elapsedTime = originalTimeFunc.call(timer, newTime);
     if (elapsedTime >= options.finishTime) elapsedTime = options.finishTime;
     return elapsedTime;
   };

@@ -15,7 +15,7 @@ var simpleTimer = require('node-timers/simple'); //or
 var timer = require('node-timers/timer'); //or
 var countdown = require('node-timers/countdown');
 
-var timer = node-timers.simple(); // timer or countdown can be created from here too...
+var myTimer = node-timers.simple(); // timer or countdown can be created from here too...
 
 // passing an options object with the pollInterval will generate a 'poll' event ever X milliseconds
 // passing no such pollInterval value will create a timer that can be controlled (start, stop, reset) but will
@@ -37,9 +37,45 @@ like other timer modules I have looked at. The output should be up to the app.
 
 ## API
 
-### simple() ###
+### simple(options)
 
-### timer() ###
+Creates a new simple timer. Keeps track of time passed. Options are optional. 
+Options can include `pollInterval` which, while the timer is on an `on` state, 
+will emit a `poll` event with the current passed time in milliseconds.
 
-### countdown() ###
+### start()
 
+Starts the timer you have created. Emits a `start` event
+
+### stop()
+
+Stops the timer. Emits a `stop` event
+
+### time(newTime)
+
+Getter and setter for the passed time of your timer. If you specifiy a `newTime` value, 
+then the timer will attempt to set itself to that new value before returning the passed time in milliseconds.
+
+### reset()
+
+Resets your timer back to it's initial state. Emits a `reset` event
+
+### timer(options) ###
+
+A limited timer based on `simple`. Additional options to `pollInterval` include `finishTime`. 
+When the timer has reached the finish time stated, it will emit a `done` event. 
+`pollInterval` defaults to 250 and finishTime defaults to 0.
+
+### countdown(options) ###
+
+A timer that counts down from a `startTime` passed though the options object. In this case, `time()` returns
+the time remaining instead of the time passed. Once the timer reaches 0, it will emit a `done` event.
+
+## Events
+
+|| Event || Description ||
+| `start` | Event triggered when timer starts. |
+| `stop` | Triggered when the timer stops. |
+| `reset` | Timer has been reset. |
+| `poll` | Update the user with the currently passed time or time that is left. `time` is passed as argument to the listener |
+| `done` | Only `timer` and `countdown` emit this. When we have reached the given endtime or 0 |
