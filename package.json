@@ -1,0 +1,17 @@
+{
+  "name": "node-timers",
+  "version": "0.0.1",
+  "description": "Timer and stopwatch utility modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malinkie/node-timers.git"
+  },
+  "author": "Scott Morrice",
+  "devDependencies": {
+    "tape": "~2.13.0"
+  }
+}
