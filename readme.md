@@ -5,8 +5,12 @@ Quick and simple timer utilities that give you enough control.
 
 ## Getting started
 
+Get it:
+`npm install node-timers`
+
+Use it:
 ```
-var node-timers = require('node-timers');
+var node-timers = require('node-timers'); //or
 var simpleTimer = require('node-timers/simple'); //or
 var timer = require('node-timers/timer'); //or
 var countdown = require('node-timers/countdown');
@@ -17,6 +21,12 @@ var timer = node-timers.simple(); // timer or countdown can be created from here
 // passing no such pollInterval value will create a timer that can be controlled (start, stop, reset) but will
 // not ping you with updates.
 var simple = simpleTimer({pollInterval: 100});
+
+//Starts keeping track of passed time...
+simple.start();
+
+//returns the time that has passed in milliseconds
+simple.time();
 ```
 
 ## Reasoning
