@@ -60,13 +60,17 @@ then the timer will attempt to set itself to that new value before returning the
 
 Resets your timer back to it's initial state. Emits a `reset` event
 
-### timer(options) ###
+### state()
+
+Returns the current state of the timer. Either `on`, `stopped`, or `clean`
+
+### timer(options)
 
 A limited timer based on `simple`. Additional options to `pollInterval` include `finishTime`. 
 When the timer has reached the finish time stated, it will emit a `done` event. 
 `pollInterval` defaults to 250 and finishTime defaults to 0.
 
-### countdown(options) ###
+### countdown(options)
 
 A timer that counts down from a `startTime` passed though the options object. In this case, `time()` returns
 the time remaining instead of the time passed. Once the timer reaches 0, it will emit a `done` event.
