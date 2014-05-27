@@ -77,7 +77,8 @@ the time remaining instead of the time passed. Once the timer reaches 0, it will
 
 ## Events
 
-|| Event || Description ||
+| Event | Description |
+| ------ | ------ |
 | `start` | Event triggered when timer starts. |
 | `stop` | Triggered when the timer stops. |
 | `reset` | Timer has been reset. |
