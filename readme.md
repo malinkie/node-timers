@@ -18,8 +18,8 @@ var countdown = require('node-timers/countdown');
 var myTimer = node-timers.simple(); // timer or countdown can be created from here too...
 
 // passing an options object with the pollInterval will generate a 'poll' event ever X milliseconds
-// passing no such pollInterval value will create a timer that can be controlled (start, stop, reset) but will
-// not ping you with updates.
+// passing no such pollInterval value will create a timer that can be controlled (start, stop, reset)
+// but will not ping you with updates.
 var simple = simpleTimer({pollInterval: 100});
 
 //Starts keeping track of passed time...
