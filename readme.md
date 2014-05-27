@@ -5,7 +5,7 @@ Quick and simple timer utilities that give you enough control.
 
 ## Getting started
 
-```
+js```
 var node-timers = require('node-timers');
 var simpleTimer = require('node-timers/simple'); //or
 var timer = require('node-timers/timer'); //or
