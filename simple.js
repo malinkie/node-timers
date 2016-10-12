@@ -14,7 +14,7 @@ module.exports = function(options){
           interval = setInterval(
             function(){
               timer.emit('poll', timer.time());
-            }, 
+            },
             options.pollInterval
           );
         }
@@ -49,7 +49,7 @@ module.exports = function(options){
 
   timer.time = function(newTime){
 
-    if(typeof newTime === 'Number'){
+    if(typeof newTime === 'number'){
       cumulative = newTime;
     }
 
