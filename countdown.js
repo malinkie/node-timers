@@ -23,4 +23,6 @@ module.exports = function(options) {
         .emit('done', timeLeft);
     }
   });
+  
+  return timer;
 };
